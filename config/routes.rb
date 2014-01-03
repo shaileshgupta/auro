@@ -1,4 +1,16 @@
 Auro::Application.routes.draw do
+  match '/', to: 'static_pages#home', via: 'get'
+
+  match '/about', to: 'static_pages#about', via: 'get'
+  match '/careers', to: 'static_pages#careers', via: 'get'
+  match '/contact', to: 'static_pages#contact', via: 'get'
+  match '/lab', to: 'static_pages#lab', via: 'get'
+  match '/product', to: 'static_pages#product', via: 'get'
+  match '/projects', to: 'static_pages#projects', via: 'get'
+  match '/team', to: 'static_pages#team', via: 'get'
+
+  resources :contacts, only: [:create]
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
