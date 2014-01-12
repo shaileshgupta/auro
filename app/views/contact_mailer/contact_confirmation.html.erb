@@ -1,10 +1,29 @@
 <p>Dear <%= @contact.name %></p>
-<p>Thank you for contacting us at AuRo Robotics. Someone from our sales team will reach out to you in next 24 hours. If you don't receive a call from us or are in an urgency, please feel free to call us at +91-8588865823 (Nalin Gupta, Product Architect) or write to us at nalin@aurobots.com.</p>
-<p>Thanking You<br>
-----------------<br>
-<strong>Team AuRo</strong></p>
-<br>
-<p>Received Message</p>
-<p>From: <%= @contact.name %></p>
-<p>Message: <%= @contact.body %></p>
-<p>Contact Details: <%= @contact.email %> &#124; <%= @contact.mobile %></p>
+
+<p>Thank you for contacting us at <strong>AuRo Robotics</strong>. Someone from our team will reach out to you in next 24 hours. If you don't receive a call from us or are in an urgency, please feel free to call us at +91-8588865823 (Nalin Gupta, Product Architect) or write to us at nalin@aurobots.com.</p>
+
+<p>
+  Thanking You<br>
+  ----------------<br>
+  <strong>Team AuRo</strong>
+</p>
+
+<br><br><br>
+
+<hr>
+
+<p>
+  <strong>From:</strong> <%= @contact.name %> [mailto: <%= @contact.email %>]<br>
+  <strong>Date:</strong> <%= DateTime.now.readable_inspect %>
+</p>
+
+<p>
+  <%= @contact.body %>
+</p>
+
+<p>
+  <%= @contact.name %><br>
+  ---------------------<br>
+  M: <%= @contact.mobile %><br>
+  E: <%= @contact.email %>
+</p>

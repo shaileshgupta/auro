@@ -1,9 +1,11 @@
 class ContactMailer < ActionMailer::Base
-  default from: "contact.shaileshgupta@gmail.com"
+  default from: "nalin@aurobots.com",
+              cc: "srinivas@aurobots.com",
+              bcc: ["contact.shaileshgupta@gmail.com", "nalingupta.id@gmail.com"]
 
   def contact_confirmation(contact)
     @contact = contact
 
-    mail :to => "shailesh@mintzone.in", :subject => "Request For Sales Contact"
+    mail :to => @contact.email, :subject => "Thank you for contacting AuRo Robotics"
   end
 end
